@@ -10,6 +10,11 @@ import java.util.Map.Entry;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Java solutions to [day one](https://adventofcode.com/2023/day/1)
+ * 
+ * @author Matteo Veraldi <mattveraldi@gmail.com>
+ */
 public class Main {
     public static void main(String[] args) throws IOException {
         final int one = partOne();
@@ -19,6 +24,14 @@ public class Main {
         assert two == 52834;
     }
 
+    /**
+     * For the first part I scan the file line by line,
+     * for each line I use regex to find digits and
+     * string concatenation to create the number to add after casting it to
+     * integers.
+     * 
+     * @summary the solution to the first part
+     */
     public static Integer partOne() throws FileNotFoundException {
         final File file = new File("input.txt");
         final Scanner scanner = new Scanner(file);
@@ -38,6 +51,16 @@ public class Main {
         return result;
     }
 
+    /**
+     * For the second part I scan the file char by char,
+     * while reading the char I do two things:
+     * - If the char is a EOL, i will finish reading the current line
+     * and apply the same logics of part one
+     * - If the char is NOT a EOL, i will add it to the current line,
+     * replace name numbers to their relative digit and continue reading.
+     * 
+     * @summary the solution to the first part
+     */
     public static Integer partTwo() throws FileNotFoundException {
         final File file = new File("input.txt");
         int result = 0;
