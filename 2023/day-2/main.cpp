@@ -3,6 +3,15 @@
 #include <string>
 #include <regex>
 
+/**
+ * Note: both solutions work under the assumption that the input file is properly formatted:
+ * - Each draw has a ',' separator.
+ * - Each round has a ';' separator.
+ * - Each game has a '\n' separator.
+ *
+ * If you are using your own input file, make sure that the last game has the '\n' separator, usually you need to manually add it.
+ */
+
 int part_one()
 {
     std::fstream file("input.txt", std::fstream::in);
